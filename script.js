@@ -1,4 +1,5 @@
 const API_URLS = {
+    'gpt4': "https://telesevapi.vercel.app/chat-gpt?question={}",
     'chatgpt': "https://chatgpt.darkhacker7301.workers.dev/?question={}",
     'girlfriend': "https://chatgpt.darkhacker7301.workers.dev/?question={}&state=girlfriend",
     'jarvis': "https://jarvis.darkhacker7301.workers.dev/?question={}&state=jarvis",
@@ -7,7 +8,6 @@ const API_URLS = {
     'lord': "https://lord.ashlynn.workers.dev/?question={}&state=Poet",
     'business': "https://bjs-tbc.ashlynn.workers.dev/?username=YourTGI'dhere&question={}",
     'developer': "https://bb-ai.ashlynn.workers.dev/?question={}&state=helper",
-    'gpt4': "https://telesevapi.vercel.app/chat-gpt?question={}",
     'bing': "https://lord-apis.ashlynn.workers.dev/?question={}&mode=Bing",
     'meta': "https://lord-apis.ashlynn.workers.dev/?question={}&mode=Llama",
     'blackbox': "https://lord-apis.ashlynn.workers.dev/?question={}&mode=Blackbox",
