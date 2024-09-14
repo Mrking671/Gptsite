@@ -7,13 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="chat-container">
-        <header>
-            <h1>Super AI</h1>
-        </header>
-
+    <header>
+        <div class="menu-icon">≡</div>
+        <h1>Super AI</h1>
         <div class="ai-selection">
-            <label for="ai-select">Select AI Model:</label>
             <select id="ai-select">
                 <option value="gpt4" selected>GPT-4</option>
                 <option value="chatgpt">ChatGPT</option>
@@ -31,14 +28,29 @@
                 <option value="gemini">Gemini AI</option>
             </select>
         </div>
-        
-        <div id="chat-box" class="chat-box"></div>
-        
-        <div class="input-container">
-            <input type="text" id="user-input" placeholder="Type your question..." />
-            <button onclick="sendMessage()">Send</button>
+    </header>
+
+    <main>
+        <div class="super-ai-text">Super AI</div>
+
+        <div class="actions">
+            <div class="action-card">
+                <span class="icon">👁️</span>
+                <p>Count the number of items in an image</p>
+            </div>
+            <div class="action-card">
+                <span class="icon">📊</span>
+                <p>Write a report based on my data</p>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Message Super AI..." />
+            <button onclick="sendMessage()">➤</button>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
