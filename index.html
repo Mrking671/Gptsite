@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Assistant</title>
+    <title>AI Chat Assistant</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to AI Assistant</h1>
-        <p>Select an AI model to ask a question:</p>
+    <div class="chat-container">
+        <header>
+            <h1>AI Chat Assistant</h1>
+            <select id="ai-select">
+                <option value="chatgpt">ChatGPT</option>
+                <option value="girlfriend">Girlfriend AI</option>
+                <option value="jarvis">Jarvis AI</option>
+                <option value="zenith">Zenith AI</option>
+                <option value="evil">Evil AI</option>
+                <option value="lord">Lord AI</option>
+                <option value="business">Business AI</option>
+                <option value="developer">Developer AI</option>
+                <option value="gpt4">GPT-4</option>
+                <option value="bing">Bing AI</option>
+                <option value="meta">Meta AI</option>
+                <option value="blackbox">Blackbox AI</option>
+                <option value="qwen">Qwen AI</option>
+                <option value="gemini">Gemini AI</option>
+            </select>
+        </header>
         
-        <div class="button-group">
-            <button onclick="askAI('chatgpt')">ChatGPT</button>
-            <button onclick="askAI('girlfriend')">Girlfriend AI</button>
-            <button onclick="askAI('jarvis')">Jarvis AI</button>
-            <button onclick="askAI('zenith')">Zenith AI</button>
-            <button onclick="askAI('evil')">Evil AI</button>
-            <button onclick="askAI('lord')">Lord AI</button>
-            <button onclick="askAI('business')">Business AI</button>
-            <button onclick="askAI('developer')">Developer AI</button>
-            <button onclick="askAI('gpt4')">GPT-4</button>
-            <button onclick="askAI('bing')">Bing AI</button>
-            <button onclick="askAI('meta')">Meta AI</button>
-            <button onclick="askAI('blackbox')">Blackbox AI</button>
-            <button onclick="askAI('qwen')">Qwen AI</button>
-            <button onclick="askAI('gemini')">Gemini AI</button>
+        <div id="chat-box" class="chat-box"></div>
+        
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type your question..." />
+            <button onclick="sendMessage()">Send</button>
         </div>
-
-        <div id="response-container" class="response"></div>
     </div>
 
     <script src="script.js"></script>
