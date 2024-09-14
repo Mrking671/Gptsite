@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to AI Assistant</h1>
+        <p>Select an AI model to ask a question:</p>
+        
+        <div class="button-group">
+            <button onclick="askAI('chatgpt')">ChatGPT</button>
+            <button onclick="askAI('girlfriend')">Girlfriend AI</button>
+            <button onclick="askAI('jarvis')">Jarvis AI</button>
+            <button onclick="askAI('zenith')">Zenith AI</button>
+            <button onclick="askAI('evil')">Evil AI</button>
+            <button onclick="askAI('lord')">Lord AI</button>
+            <button onclick="askAI('business')">Business AI</button>
+            <button onclick="askAI('developer')">Developer AI</button>
+            <button onclick="askAI('gpt4')">GPT-4</button>
+            <button onclick="askAI('bing')">Bing AI</button>
+            <button onclick="askAI('meta')">Meta AI</button>
+            <button onclick="askAI('blackbox')">Blackbox AI</button>
+            <button onclick="askAI('qwen')">Qwen AI</button>
+            <button onclick="askAI('gemini')">Gemini AI</button>
+        </div>
+
+        <div id="response-container" class="response"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
