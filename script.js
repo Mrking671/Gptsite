@@ -15,24 +15,40 @@ const API_URLS = {
     'gemini': "https://lord-apis.ashlynn.workers.dev/?question={}&mode=Gemini"
 };
 
-function askAI(model) {
-    const question = prompt(`Ask your question to ${model}:`);
-    if (!question) return;
+function sendMessage() {
+    const userMessage = document.getElementById('user-input').value;
+    const selectedAI = document.getElementById('ai-select').value;
+    const chatBox = document.getElementById('chat-box');
 
-    const url = API_URLS[model].replace("{}", encodeURIComponent(question));
+    if (!userMessage) return;
 
-    fetch(url)
+    // Append user message to chat
+    appendMessage('user', userMessage);
+    document.getElementById('user-input').value = '';
+
+    // Call the AI API
+    const apiUrl = API_URLS[selectedAI].replace("{}", encodeURIComponent(userMessage));
+    
+    fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            const responseElement = document.getElementById('response-container');
-            if (model === 'gpt4') {
-                responseElement.innerHTML = `<pre>${JSON.stringify(data.message, null, 2)}</pre><br><a href="${data.Credit}" target="_blank">Source</a>`;
+            if (selectedAI === 'gpt4') {
+                appendMessage('ai', data.message);
             } else {
-                responseElement.innerHTML = `<pre>${JSON.stringify(data.answer, null, 2)}</pre><br><a href="https://t.me/Ashlynn_Repository" target="_blank">Join Channel</a>`;
+                appendMessage('ai', data.answer);
             }
         })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Failed to get a response from the AI.');
+        .catch(err => {
+            appendMessage('ai', 'Sorry, something went wrong.');
+            console.error(err);
         });
+}
+
+function appendMessage(sender, message) {
+    const chatBox = document.getElementById('chat-box');
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message', sender);
+    messageElement.innerText = message;
+    chatBox.appendChild(messageElement);
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
