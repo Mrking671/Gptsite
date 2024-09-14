@@ -8,37 +8,36 @@
 </head>
 <body>
     <header>
-        <div class="menu-icon">≡</div>
-        <h1>Super AI</h1>
-        <div class="ai-selection">
+        <nav>
+            <div class="menu-icon">&#9776;</div>
+            <div class="logo">Super AI</div>
             <select id="ai-select">
-                <option value="gpt4" selected>GPT-4</option>
+                <option value="gpt4">GPT-4 (Default)</option>
                 <option value="chatgpt">ChatGPT</option>
-                <option value="girlfriend">Girlfriend AI</option>
-                <option value="jarvis">Jarvis AI</option>
-                <option value="zenith">Zenith AI</option>
-                <option value="evil">Evil AI</option>
-                <option value="lord">Lord AI</option>
-                <option value="business">Business AI</option>
-                <option value="developer">Developer AI</option>
-                <option value="bing">Bing AI</option>
-                <option value="meta">Meta AI</option>
-                <option value="blackbox">Blackbox AI</option>
-                <option value="qwen">Qwen AI</option>
-                <option value="gemini">Gemini AI</option>
+                <option value="girlfriend">Girlfriend</option>
+                <option value="jarvis">Jarvis</option>
+                <option value="zenith">Zenith</option>
+                <option value="evil">Evil</option>
+                <option value="lord">Lord</option>
+                <option value="business">Business</option>
+                <option value="developer">Developer</option>
+                <option value="bing">Bing</option>
+                <option value="meta">Meta</option>
+                <option value="blackbox">Blackbox</option>
+                <option value="qwen">Qwen</option>
+                <option value="gemini">Gemini</option>
             </select>
-        </div>
+        </nav>
     </header>
-
     <main>
-        <div class="super-ai-text">Super AI</div>
-        <div id="response-container"></div>
+        <div id="chat-container">
+            <div id="message-container"></div>
+        </div>
     </main>
-
     <footer>
         <div class="input-container">
-            <input type="text" id="user-input" placeholder="Message Super AI..." />
-            <button id="send-btn">➤</button>
+            <input type="text" id="message-input" placeholder="Message Super AI...">
+            <button id="send-button">&#9654;</button>
         </div>
     </footer>
 
