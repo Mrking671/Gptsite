@@ -32,23 +32,13 @@
 
     <main>
         <div class="super-ai-text">Super AI</div>
-
-        <div class="actions">
-            <div class="action-card">
-                <span class="icon">👁️</span>
-                <p>Count the number of items in an image</p>
-            </div>
-            <div class="action-card">
-                <span class="icon">📊</span>
-                <p>Write a report based on my data</p>
-            </div>
-        </div>
+        <div id="response-container"></div>
     </main>
 
     <footer>
         <div class="input-container">
             <input type="text" id="user-input" placeholder="Message Super AI..." />
-            <button onclick="sendMessage()">➤</button>
+            <button id="send-btn">➤</button>
         </div>
     </footer>
 
