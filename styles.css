@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
+    background-color: #f0f2f5;
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,62 +13,87 @@ body {
     width: 100%;
     max-width: 600px;
     height: 90vh;
-    background-color: white;
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 header {
-    padding: 20px;
     background-color: #007bff;
     color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-header select {
-    padding: 5px;
+.ai-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.ai-selection label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.ai-selection select {
+    padding: 5px 10px;
     font-size: 1rem;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.ai-selection select:hover {
+    border-color: #0056b3;
 }
 
 .chat-box {
     flex: 1;
     padding: 20px;
     overflow-y: auto;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 .message {
-    margin-bottom: 15px;
     max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    line-height: 1.5;
+    font-size: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .message.user {
     align-self: flex-end;
     background-color: #007bff;
     color: white;
-    padding: 10px;
-    border-radius: 10px 10px 0 10px;
+    border-bottom-right-radius: 0;
 }
 
 .message.ai {
     align-self: flex-start;
-    background-color: #f1f1f1;
-    padding: 10px;
-    border-radius: 10px 10px 10px 0;
+    background-color: #e0e0e0;
+    color: black;
+    border-bottom-left-radius: 0;
 }
 
 .input-container {
     display: flex;
-    padding: 20px;
+    padding: 15px;
     border-top: 1px solid #ddd;
+    background-color: #fff;
 }
 
 input {
@@ -77,6 +102,11 @@ input {
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
+    outline: none;
+}
+
+input:focus {
+    border-color: #007bff;
 }
 
 button {
