@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super AI</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super AI</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="menu-icon">&#9776;</div>
-            <div class="logo">Super AI</div>
-            <select id="ai-select">
-                <option value="gpt4">GPT-4 (Default)</option>
-                <option value="chatgpt">ChatGPT</option>
-                <option value="girlfriend">Girlfriend</option>
-                <option value="jarvis">Jarvis</option>
-                <option value="zenith">Zenith</option>
-                <option value="evil">Evil</option>
-                <option value="lord">Lord</option>
-                <option value="business">Business</option>
-                <option value="developer">Developer</option>
-                <option value="bing">Bing</option>
-                <option value="meta">Meta</option>
-                <option value="blackbox">Blackbox</option>
-                <option value="qwen">Qwen</option>
-                <option value="gemini">Gemini</option>
-            </select>
-        </nav>
-    </header>
-    <main>
-        <div id="chat-container">
-            <div id="message-container"></div>
-        </div>
-    </main>
-    <footer>
-        <div class="input-container">
-            <input type="text" id="message-input" placeholder="Message Super AI...">
-            <button id="send-button">&#9654;</button>
-        </div>
-    </footer>
+  <header>
+    <h1>Super AI</h1>
+  </header>
 
-    <script src="script.js"></script>
+  <main>
+    <div class="ai-selection">
+      <select id="ai-model">
+        <option value="chatgpt">ChatGPT</option>
+        <option value="girlfriend">Girlfriend</option>
+        <option value="jarvis">Jarvis</option>
+        <option value="zenith">Zenith</option>
+        <option value="evil">EvilGPT</option>
+        <option value="lord">Lord</option>
+        <option value="business">Business</option>
+        <option value="developer">Developer</option>
+        <option value="gpt4">GPT-4</option>
+        <option value="bing">Bing</option>
+        <option value="meta">Meta</option>
+        <option value="blackbox">Blackbox</option>
+        <option value="qwen">Qwen</option>
+        <option value="gemini">Gemini</option>
+      </select>
+    </div>
+
+    <div class="chat-container">
+      <textarea id="question" placeholder="Ask your question..."></textarea>
+      <button onclick="sendQuestion()">Send</button>
+    </div>
+
+    <pre id="response" class="pretty-print"></pre>
+  </main>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
