@@ -17,21 +17,24 @@ const API_URLS = {
 
 async function sendQuestion() {
   const aiModel = document.getElementById('ai-model').value;
-  const question = document.getElementById('question').value;
+  const question = document.getElementById('question').value.trim();
   const apiUrl = API_URLS[aiModel].replace('{}', encodeURIComponent(question));
+
+  // Clear any previous response
+  document.getElementById('response').textContent = "Loading...";
 
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
     
-    // Determine response format based on API type
-    let displayResponse;
+    // Handling different response formats
+    let displayResponse = '';
     if (aiModel === 'gpt4') {
-      displayResponse = JSON.stringify(data, null, 2); // GPT-4 has a different format
+      displayResponse = `Message: ${data.message}\nCredit: ${data.Credit}`;
     } else {
-      displayResponse = JSON.stringify(data, null, 2); // Pretty print format for all others
+      displayResponse = `Answer: ${data.answer}\nJoin: ${data.join}`;
     }
-    
+
     document.getElementById('response').textContent = displayResponse;
   } catch (error) {
     document.getElementById('response').textContent = "Error fetching response.";
