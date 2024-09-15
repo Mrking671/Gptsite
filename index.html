@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Super AI</title>
+  <title>Super AI - Chat Interface</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="container">
+  <div class="chat-container">
     <header>
       <h1>Super AI</h1>
     </header>
 
-    <div class="ai-selection">
-      <label for="ai-model">Choose an AI:</label>
+    <div class="chat-window">
+      <div class="message-area" id="message-area"></div>
+    </div>
+
+    <div class="input-area">
       <select id="ai-model">
         <option value="chatgpt">ChatGPT</option>
         <option value="girlfriend">Girlfriend</option>
@@ -30,14 +33,10 @@
         <option value="qwen">Qwen</option>
         <option value="gemini">Gemini</option>
       </select>
-    </div>
 
-    <div class="chatbox">
-      <textarea id="question" placeholder="Ask your question here..." rows="4"></textarea>
+      <textarea id="user-input" placeholder="Type your message here..."></textarea>
       <button onclick="sendQuestion()">Send</button>
     </div>
-
-    <div id="response" class="response"></div>
   </div>
 
   <script src="js/script.js"></script>
