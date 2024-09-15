@@ -17,26 +17,43 @@ const API_URLS = {
 
 async function sendQuestion() {
   const aiModel = document.getElementById('ai-model').value;
-  const question = document.getElementById('question').value.trim();
-  const apiUrl = API_URLS[aiModel].replace('{}', encodeURIComponent(question));
+  const userInput = document.getElementById('user-input').value.trim();
+  if (!userInput) return;
 
-  // Clear any previous response
-  document.getElementById('response').textContent = "Loading...";
+  // Display the user's message in the chat window
+  const messageArea = document.getElementById('message-area');
+  const userMessage = document.createElement('div');
+  userMessage.textContent = `You: ${userInput}`;
+  messageArea.appendChild(userMessage);
 
+  // Clear input field
+  document.getElementById('user-input').value = "";
+
+  // Fetch API response
+  const apiUrl = API_URLS[aiModel].replace('{}', encodeURIComponent(userInput));
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
-    
-    // Handling different response formats
-    let displayResponse = '';
+
+    // Format response based on API model
+    let reply;
     if (aiModel === 'gpt4') {
-      displayResponse = `Message: ${data.message}\nCredit: ${data.Credit}`;
+      reply = `GPT-4: ${JSON.stringify(data, null, 2)}`;
     } else {
-      displayResponse = `Answer: ${data.answer}\nJoin: ${data.join}`;
+      reply = `AI: ${JSON.stringify(data, null, 2)}`;
     }
 
-    document.getElementById('response').textContent = displayResponse;
+    // Append the AI's response to the chat
+    const aiMessage = document.createElement('div');
+    aiMessage.textContent = reply;
+    messageArea.appendChild(aiMessage);
+
+    // Scroll to the bottom of the chat window
+    messageArea.scrollTop = messageArea.scrollHeight;
+
   } catch (error) {
-    document.getElementById('response').textContent = "Error fetching response.";
+    const errorMessage = document.createElement('div');
+    errorMessage.textContent = `Error: Unable to fetch response.`;
+    messageArea.appendChild(errorMessage);
   }
 }
