@@ -7,12 +7,13 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Super AI</h1>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Super AI</h1>
+    </header>
 
-  <main>
     <div class="ai-selection">
+      <label for="ai-model">Choose an AI:</label>
       <select id="ai-model">
         <option value="chatgpt">ChatGPT</option>
         <option value="girlfriend">Girlfriend</option>
@@ -31,13 +32,13 @@
       </select>
     </div>
 
-    <div class="chat-container">
-      <textarea id="question" placeholder="Ask your question..."></textarea>
+    <div class="chatbox">
+      <textarea id="question" placeholder="Ask your question here..." rows="4"></textarea>
       <button onclick="sendQuestion()">Send</button>
     </div>
 
-    <pre id="response" class="pretty-print"></pre>
-  </main>
+    <div id="response" class="response"></div>
+  </div>
 
   <script src="js/script.js"></script>
 </body>
